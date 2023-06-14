@@ -52,11 +52,8 @@ public class HomeController : Controller
         ModelState.AddModelError("Email", "Invalid Email/Password");
         return View("Index");
       }
-      // Otherwise, we have a user, now we need to check their password                 
-      // Initialize hasher object        
       PasswordHasher<LoginUser> hasher = new PasswordHasher<LoginUser>();
-      // Verify provided password against hash stored in db        
-      var result = hasher.VerifyHashedPassword(userSubmission, userInDb.Password, userSubmission.Password);                                    // Result can be compared to 0 for failure        
+      var result = hasher.VerifyHashedPassword(userSubmission, userInDb.Password, userSubmission.Password);
       if (result == 0)
       {
         ModelState.AddModelError("Password", "Invalid Email/Password");
