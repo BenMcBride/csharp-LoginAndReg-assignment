@@ -4,17 +4,17 @@
   <form asp-action="Login" asp-controller="Home" method="post">
     <div class="container mt-3 border rounded">
       <div class="row m-2">
-        <label asp-for="Email" class="col-sm-2 col-form-label">Email:</label>
+        <label asp-for="LoginEmail" class="col-sm-2 col-form-label">Email:</label>
         <div class="col-sm-10">
-          <input class="form-control" asp-for="Email">
-          <span class="text-danger" asp-validation-for="Email"></span>
+          <input class="form-control" asp-for="LoginEmail">
+          <span class="text-danger" asp-validation-for="LoginEmail"></span>
         </div>
       </div>
       <div class="row m-2">
-        <label asp-for="Password" class="col-sm-2 col-form-label">Password:</label>
+        <label asp-for="LoginPassword" class="col-sm-2 col-form-label">Password:</label>
         <div class="col-sm-10">
-          <input type="password" class="form-control" asp-for="Password">
-          <span class="text-danger" asp-validation-for="Password"></span>
+          <input type="password" class="form-control" asp-for="LoginPassword">
+          <span class="text-danger" asp-validation-for="LoginPassword"></span>
         </div>
       </div>
       <div class="mb-3">

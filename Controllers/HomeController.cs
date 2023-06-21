@@ -46,14 +46,14 @@ public class HomeController : Controller
   {
     if (ModelState.IsValid)
     {
-      User? userInDb = db.Users.FirstOrDefault(u => u.Email == userSubmission.Email);
+      User? userInDb = db.Users.FirstOrDefault(u => u.Email == userSubmission.LoginEmail);
       if (userInDb == null)
       {
         ModelState.AddModelError("Email", "Invalid Email/Password");
         return View("Index");
       }
       PasswordHasher<LoginUser> hasher = new PasswordHasher<LoginUser>();
-      var result = hasher.VerifyHashedPassword(userSubmission, userInDb.Password, userSubmission.Password);
+      var result = hasher.VerifyHashedPassword(userSubmission, userInDb.Password, userSubmission.LoginPassword);
       if (result == 0)
       {
         ModelState.AddModelError("Password", "Invalid Email/Password");
